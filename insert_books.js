@@ -1,7 +1,8 @@
 // insert_books.js - Script to populate MongoDB with sample book data
 
 // Import MongoDB client
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require('mongodb');   // Import MongoDB client
+
 
 // Connection URI (replace with your MongoDB connection string if using Atlas)
 const uri = 'mongodb://localhost:27017';
@@ -175,18 +176,13 @@ async function insertBooks() {
   }
 }
 
-// Run the function
-insertBooks().catch(console.error);
-
 /*
- * Example MongoDB queries you can try after running this script:
- *
- * 1. Find all books:
- *    db.books.find()
- *
- * 2. Find books by a specific author:
- *    db.books.find({ author: "George Orwell" })
- *
+ * 1. Find all books in a specific genre (fiction):
+ *    db.books.find({ genre: "Fiction" }) 
+ * 
+ * 2. Find books published after a certain year ( 2000):
+ *    db.books.find({ published_year: { $gt: 2000 } })
+ * 
  * 3. Find books published after 1950:
  *    db.books.find({ published_year: { $gt: 1950 } })
  *
@@ -196,3 +192,4 @@ insertBooks().catch(console.error);
  * 5. Find in-stock books:
  *    db.books.find({ in_stock: true })
  */ 
+
